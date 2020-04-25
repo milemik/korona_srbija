@@ -5,10 +5,14 @@ import pandas as pd
 import os
 from att_send_mail import SendMail
 import random
+import schedule
+from time import sleep
 try:
     import conf
 except:
     import conf_set as conf
+
+
 
 class Scraper:
     """
@@ -119,5 +123,8 @@ def main():
     s.run()
 
 if __name__ == '__main__':
-    main()
+    schedule.every().day.at('16:00').do(main)
+    while True:
+        schedule.run_pending()
+        sleep(1)
 

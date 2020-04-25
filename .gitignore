@@ -1,7 +1,7 @@
 env/
 __pycache__/
 conf.py
-shed.py
+sched.py
 send_mail.py
 
 
